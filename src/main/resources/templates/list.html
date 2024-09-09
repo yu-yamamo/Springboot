@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>送信内容一覧</title>
+</head>
+<body>
+    <h1>送信内容一覧</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名前</th>
+                <th>メールアドレス</th>
+                <th>問い合わせ内容</th>
+                <th>作成日時</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.message}"></td>
+                <td th:text="${user.createdAt}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/users/form">新規入力</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>確認画面</title>
+</head>
+<body>
+    <h1>確認画面</h1>
+    <form action="/users/save" method="post" th:object="${user}">
+        <p>名前: <span th:text="${user.name}"></span></p>
+        <p>メールアドレス: <span th:text="${user.email}"></span></p>
+        <p>問い合わせ内容: <span th:text="${user.message}"></span></p>
+        <input type="hidden" th:field="*{name}" />
+        <input type="hidden" th:field="*{email}" />
+        <input type="hidden" th:field="*{message}" />
+        <button type="submit">送信</button>
+    </form>
+    <a href="/users/form">戻る</a>
+</body>
+</html>

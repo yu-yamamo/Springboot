@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ユーザー入力フォーム</title>
+</head>
+<body>
+    <h1>ユーザー入力フォーム</h1>
+    <form action="/users/confirm" method="post" th:object="${user}">
+        <label>名前:</label>
+        <input type="text" th:field="*{name}" required /><br/>
+        <label>メールアドレス:</label>
+        <input type="email" th:field="*{email}" required /><br/>
+        <label>問い合わせ内容:</label>
+        <textarea th:field="*{message}" required></textarea><br/>
+        <button type="submit">確認</button>
+    </form>
+</body>
+</html>
